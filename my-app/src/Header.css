@@ -1,0 +1,29 @@
+.menu-container{
+    color: #fff;
+    background-color: #34495e;
+    display: flex;
+    height: 60px;
+    justify-content: flex-end;
+    padding: 20px 0;
+    /* align-items: center; */
+    position: sticky;
+    top: 0;
+}
+.menu{
+     width: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+
+}
+.signup,.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.signup:hover,.login:hover{
+    color:#e67e22;
+}
