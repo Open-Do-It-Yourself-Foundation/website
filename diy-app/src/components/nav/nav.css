@@ -1,0 +1,26 @@
+.menu-container {
+  color: #fff;
+  background-color: #5995da; /* Blue */
+  padding: 20px 0;
+}
+
+.menu {
+  /* border: 1px solid #fff;  For debugging */
+
+  padding-right: 5px;
+  display: flex;
+  float: right;
+  font-size: 15px;
+}
+
+.login {
+  padding: 0 5px;
+}
+
+.signup {
+  padding: 0 5px;
+}
+
+.date {
+  padding: 0 5px;
+}
