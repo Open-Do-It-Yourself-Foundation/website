@@ -1,7 +1,7 @@
 
 // Custom components
-import Footer from "../../../src/components/footer/Footer"
-import Nav from "../../../src/components/nav/Nav"
+import Footer from "../../components/footer/Footer"
+import Nav from "../../components/nav/Nav"
 
 function LandingPage(){
     return(
