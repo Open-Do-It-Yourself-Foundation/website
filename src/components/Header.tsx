@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import './header.css';
 import {Link} from 'react-router-dom';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
@@ -8,10 +8,20 @@ const Header = () => {
 
   const [date,setDate]=useState(new Date());
 
+//   For time 
+//   useEffect(() => {
+//     var timer = setInterval(()=>setDate(new Date()), 1000 )
+//     return function cleanup() {
+//         clearInterval(timer)
+//     }
+
+// });
+
     return (
         <div className='menu-container'>
             <div className="menu">
-                <div className="date"> Today : {date.toLocaleDateString()}</div>
+            {/* Time : {date.toLocaleTimeString()} */}
+                <div className="date">  Today : {date.toLocaleDateString()}</div>
                <div className="auth">
                <Link to='/signup' className='header__link'>
                 <div className="signup">
