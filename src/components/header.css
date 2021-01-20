@@ -1,0 +1,42 @@
+.menu-container{
+    color: #fff;
+    background-color: #34495e;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    padding: 20px 0;
+    /* align-items: center; 
+    position: sticky;
+    top: 0; */
+}
+.menu{
+     width: 1000px;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+
+}
+.signup,.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.header__link{
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+
+}
+
+.signup:hover,.login:hover{
+    color:#e67e22;
+}
+.auth{
+    display: flex;
+    justify-content: flex-end;
+}
+.login{
+    margin-left: 20px;
+}
