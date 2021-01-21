@@ -1,44 +1,39 @@
-import React, {useState,useEffect} from 'react'
-import './header.css';
-import {Link} from 'react-router-dom';
-import AccountBoxIcon from '@material-ui/icons/AccountBox';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import React, { useState } from 'react';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
-const Header = () => {
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    title: {
+      flexGrow: 1,
+    },
+  }),
+);
 
+const  Header = () =>{
+  const classes = useStyles();
   const [date,setDate]=useState(new Date());
-
-//   For time 
-//   useEffect(() => {
-//     var timer = setInterval(()=>setDate(new Date()), 1000 )
-//     return function cleanup() {
-//         clearInterval(timer)
-//     }
-
-// });
-
-    return (
-        <div className='menu-container'>
-            <div className="menu">
-            {/* Time : {date.toLocaleTimeString()} */}
-                <div className="date">  Today : {date.toLocaleDateString()}</div>
-               <div className="auth">
-               <Link to='/signup' className='header__link'>
-                <div className="signup">
-                    <AccountBoxIcon className='header__icons'/>
-                    Sign Up
-                </div>
-                </Link>
-                <Link to='/login' className='header__link'>
-                <div className="login">
-                    <AccountCircleIcon className='header__icons'/> 
-                    Login
-                </div>
-                </Link>
-                </div>
-            </div>
-        </div>
-    )
+  return (
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" className={classes.title}>
+            Today : {date.toLocaleDateString()}
+          </Typography>
+          <Button color="inherit">Signup</Button>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
-
-export default Header
+export default Header;

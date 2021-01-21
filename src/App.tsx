@@ -1,34 +1,14 @@
-import React from 'react';
-// import logo from './logo.svg';
-import {BrowserRouter as Router, Switch,Route} from 'react-router-dom'
-import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-function App() {
-  return (
-    <Router>
-    <div className="app">
-  
-    <Switch>
-       
-       <Route path='/login'>
-            <Header/>
-            <Footer/>
-       </Route>
-       <Route path='/signup'>
-            <Header/>
-            <Footer/>
-       </Route>
-       <Route path='/'>
-            <Header/>
-            <Footer/>
-       </Route>
-    </Switch>
+import React from "react";
+import Header from "./components/Header";
+import { makeStyles } from "@material-ui/core/styles";
 
-   </div>
+const useStyles = makeStyles({});
 
- </Router>
-  );
+export default function App() {
+     const classes = useStyles();
+     return (
+          <div className="App">
+               <Header />
+          </div>
+     );
 }
-
-export default App;
