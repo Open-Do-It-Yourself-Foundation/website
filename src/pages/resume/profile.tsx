@@ -1,10 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 import {Grid, Box,IconButton,Paper}from '@material-ui/core';
-
-
-
-
-
+import SocialIcons from '../../components/common/SocialIcons';
 const styles = makeStyles((theme) => ({
     container: {
         [theme.breakpoints.up('sm')]: {
@@ -103,15 +99,13 @@ const styles = makeStyles((theme) => ({
         padding: 0
     },
    
-    socialIcon: {
-        fill: theme.palette.common.white,
-        backgroundColor: "#33383b",
-        borderRadius: theme.shape.borderRadius,
-        "&:hover": {
-          backgroundColor: theme.palette.primary.light,
-        }
-    }
 }))
+
+const infoItems={
+  address:"Test Address",
+  email :"abc@abc.com",
+  phone:"+123456789"
+}
 
 const socialIcons = [
     {
@@ -198,23 +192,12 @@ function profile() {
                                 <h1 className={classes.profileTitle}>
                                     <span className={classes.profileTitleStart}>I'm</span> Hugo Researcher
                                 </h1>
-                                <h3 className={classes.profileListItem}>Address : <span className={classes.profileListItemValue}>Test Address</span> </h3>
-                                <h3 className={classes.profileListItem}>Email : <span className={classes.profileListItemValue}>abc@yahoo.com</span> </h3>
-                                <h3 className={classes.profileListItem}>Phone : <span className={classes.profileListItemValue}>+123456789</span> </h3>
+                                <h3 className={classes.profileListItem}>Address : <span className={classes.profileListItemValue}>{infoItems.address}</span> </h3>
+                                <h3 className={classes.profileListItem}>Email : <span className={classes.profileListItemValue}>{infoItems.email}</span> </h3>
+                                <h3 className={classes.profileListItem}>Phone : <span className={classes.profileListItemValue}>{infoItems.phone}</span> </h3>
                                 <h2 className={classes.profilePosition}>Full Stack Developer</h2>
-                                <Box display="flex">
-                                    {socialIcons.map((socialIcon, index) => (
-                                            <Box key={index} mr={index !== socialIcons.length - 1 ? 1 : 0}>
-                                            <IconButton
-                                                aria-label={socialIcon.label}
-                                                className={classes.socialIcon}
-                                                href={socialIcon.href}
-                                            >
-                                                {socialIcon.icon}
-                                            </IconButton>
-                                            </Box>
-                                    ))}
-                               </Box>
+                                
+                               <SocialIcons/>
                             </Grid>
                         </Grid>
                     </Grid>
