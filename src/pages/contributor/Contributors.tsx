@@ -62,6 +62,11 @@ export default function Contributors() {
                   name={contributor.name}
                   image={contributor.img}
                   desc={contributor.desc}
+                  id={contributor.id}
+                  isActive={contributor.isActive}
+                  Address={contributor.Address}
+                  tel={contributor.tel}
+                  skills={contributor.skills}
                 />
               </Grid>
             ))}
