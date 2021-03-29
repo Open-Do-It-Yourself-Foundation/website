@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect, useRef, useContext } from 'react';
+import React, { useContext } from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -60,8 +60,6 @@ const Nav = (props: any) => {
         state: { language },
         dispatch: { setLanguage, translate },
     } = useContext(LanguageContext);
-    const [showDropdown, setShowDropdown] = useState(false);
-    const dropdownEl = useRef<HTMLUListElement>(null);
 
     const handleMenu = (event: any) => {
         setAnchorEl(event.currentTarget);
@@ -98,26 +96,8 @@ const Nav = (props: any) => {
             pageURL: '/contributor',
         },
     ];
-    const handleClickOutside = useCallback(
-        (e) => {
-            if (showDropdown && e.target.closest('.dropdown') !== dropdownEl.current) {
-                setShowDropdown(false);
-            }
-        },
-        [showDropdown, setShowDropdown, dropdownEl],
-    );
-
-    useEffect(() => {
-        document.addEventListener('click', handleClickOutside);
-
-        return () => {
-            document.removeEventListener('click', handleClickOutside);
-        };
-    }, [handleClickOutside]);
 
     const chooseLanguageHandler = (value: string) => {
-        console.log(value);
-        setShowDropdown(false);
         setLanguage(value);
     };
 
@@ -204,17 +184,6 @@ const Nav = (props: any) => {
                                 {' '}
                                 {translate('LOGIN')}
                             </Button>
-                            {/* <div className="header_nav_lang">
-                                <p className="selected" onClick={() => setShowDropdown(!showDropdown)}>
-                                    {language}
-                                </p>
-                                {showDropdown && (
-                                    <ul className="dropdown" ref={dropdownEl}>
-                                        <li onClick={() => chooseLanguageHandler('EN')}>EN</li>
-                                        <li onClick={() => chooseLanguageHandler('DA')}>DE</li>
-                                    </ul>
-                                )}
-                            </div> */}
                             <Button
                                 color="primary"
                                 className={classes.menuButtonText}
